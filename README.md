@@ -1,32 +1,49 @@
-# React + TypeScript + Vite
+# BeanUp — Café Artisanal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Modern landing page for BeanUp, an artisanal coffee shop based in Tunisia. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** React 19 + TypeScript
+- **Build tool:** Vite 8
+- **UI library:** Fluent UI React Components
+- **Fonts:** Playfair Display + Montserrat (Google Fonts)
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Build
+
+```bash
+npm run build
+```
+
+The output goes to the `dist/` directory, ready for deployment.
+
+## Deployment
+
+This project is designed for Cloudflare Pages:
+
+1. Connect your GitHub repository to Cloudflare Pages.
+2. Set the build command: `npm run build`
+3. Set the build output directory: `dist`
+4. For SPA routing, add a `_redirects` file or configure it in Cloudflare Pages settings.
+
+## Project Structure
+
+```
+├── public/           # Static assets (favicon, video)
+├── src/
+│   ├── components/   # React components
+│   ├── data/         # Menu data
+│   ├── styles/       # Global styles
+│   ├── App.tsx       # Main app
+│   └── main.tsx      # Entry point
+├── index.html
+├── vite.config.ts
+└── tsconfig*.json
+```

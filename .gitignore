@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OpenCode AI agent config
+.opencode/
+
+# Playwright MCP artifacts
+.playwright-mcp/
