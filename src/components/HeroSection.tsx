@@ -223,7 +223,7 @@ const HeroSection: React.FC = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>BeanUp</h1>
 
-        <p className={styles.subtitle}>Coffee Shop &amp; Détente &mdash; Sfax</p>
+        <p className={styles.subtitle}>Coffee Shop  &mdash; Sfax</p>
 
         <div className={styles.divider} aria-hidden="true" />
 

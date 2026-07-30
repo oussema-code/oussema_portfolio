@@ -50,9 +50,9 @@ export const menuItems: MenuItem[] = [
   // === CAFÉS CLASSIQUES (texte uniquement) ===
   {
     id: 'clas-1',
-    name: 'Espresso (Simple / Double)',
+    name: 'Espresso ',
     description: 'Corsé et intense. Notre mélange maison Éthiopie & Brésil.',
-    price: '3.00 / 4.50 TND',
+    price: '3.00 TND',
     category: 'Cafés Classiques',
     image: '',
     isSignature: false,
@@ -95,7 +95,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'clas-6',
-    name: 'Mocha',
+    name: 'Matcha',
     description: 'Espresso, chocolat noir fondant et lait crémeux. Pour les gourmands.',
     price: '6.50 TND',
     category: 'Cafés Classiques',
@@ -133,7 +133,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: 'tea-3',
-    name: 'Infusion Camomille & Miel',
+    name: 'Infusion Camomille',
     description: 'Camomille bio, miel local, verveine. Pour décompresser.',
     price: '4.00 TND',
     category: 'Thés & Infusions',
