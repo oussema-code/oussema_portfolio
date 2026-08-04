@@ -1,1 +1,76 @@
-@import './styles/global.css';
+@import "tailwindcss";
+
+/*
+ * Portfolio design tokens — Oussema Ben Ameur
+ * Dark-first, technical/engineering aesthetic.
+ * One accent (terminal amber) used sparingly; monospace for labels/code.
+ */
+@theme {
+  /* Base surfaces (dark, near-black with subtle warm tint) */
+  --color-bg: #0b0d0f;
+  --color-surface: #121518;
+  --color-surface-2: #191d21;
+  --color-border: #2a2f35;
+
+  /* Typography */
+  --color-ink: #e6e6e9;
+  --color-ink-dim: #9aa3ad;
+  --color-ink-mute: #7d8794;
+
+  /* Accent — amber, used sparingly */
+  --color-accent: #f2a03d;
+  --color-accent-strong: #ffb35c;
+  --color-accent-dim: rgba(242, 160, 61, 0.12);
+  --color-accent-line: rgba(242, 160, 61, 0.35);
+
+  /* Semantic */
+  --color-success: #4ade80;
+  --color-danger: #f87171;
+
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-accent-dim);
+  color: var(--color-accent-strong);
+}
+
+/* Thin, unobtrusive scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-mute);
+}

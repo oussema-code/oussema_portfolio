@@ -1,0 +1,312 @@
+- generic [ref=e2]:
+  - link "Skip to content" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Oussema Ben Ameur — back to top" [ref=e6] [cursor=pointer]:
+        - /url: "#home"
+        - text: ~oussema/
+      - navigation "Primary" [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Home" [ref=e10] [cursor=pointer]:
+              - /url: "#home"
+          - listitem [ref=e11]:
+            - link "About" [ref=e12] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=e13]:
+            - link "Projects" [ref=e14] [cursor=pointer]:
+              - /url: "#projects"
+          - listitem [ref=e15]:
+            - link "Skills" [ref=e16] [cursor=pointer]:
+              - /url: "#skills"
+          - listitem [ref=e17]:
+            - link "Education" [ref=e18] [cursor=pointer]:
+              - /url: "#education"
+          - listitem [ref=e19]:
+            - link "Contact" [ref=e20] [cursor=pointer]:
+              - /url: "#contact"
+  - main [ref=e21]:
+    - region "Introduction" [ref=e22]:
+      - generic [ref=e23]:
+        - paragraph [ref=e25]: $ ~/oussema_
+        - heading "Oussema Ben Ameur" [level=1] [ref=e27]
+        - paragraph [ref=e29]: Software Engineering Student | Backend, Databases & Distributed Systems
+        - paragraph [ref=e31]: Final-year software engineering student seeking a PFE internship in backend, distributed systems, and full-stack engineering, available for 4-6 months starting February 2027.
+        - paragraph [ref=e33]: Tunis, Tunisia
+        - navigation "External profiles and CV" [ref=e36]:
+          - link "github ↗" [ref=e37] [cursor=pointer]:
+            - /url: https://github.com/oussema-code
+          - link "linkedin ↗" [ref=e38] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/oussema-benameur-07151b246/
+          - link "oussemabenameur016@gmail.com" [ref=e39] [cursor=pointer]:
+            - /url: mailto:oussemabenameur016@gmail.com
+          - link "Download CV" [ref=e40] [cursor=pointer]:
+            - /url: /cv.pdf
+    - region "About" [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - paragraph [ref=e44]: 02 // about
+          - heading "About" [level=2] [ref=e45]
+        - generic [ref=e46]:
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: "I am a software engineering student at the National Engineering School of Tunis (ENIT), focused on backend and distributed-systems engineering — database design, microservices, and event-driven architectures. My work centers on building reliable systems: multi-tenant data isolation, CQRS pipelines, and cloud-native deployment."
+            - paragraph [ref=e50]:
+              - text: I am currently seeking a Seeking a final-year engineering internship — 4-6 months, starting February 2027. I am open to roles in
+              - generic [ref=e51]: Backend
+              - generic [ref=e52]: / Distributed Systems
+              - generic [ref=e53]: / Full-Stack
+              - text: engineering, and I am comfortable shipping across the full stack when the team needs it.
+            - paragraph [ref=e54]:
+              - text: Reach me at
+              - link "oussemabenameur016@gmail.com" [ref=e55] [cursor=pointer]:
+                - /url: mailto:oussemabenameur016@gmail.com
+              - text: .
+          - complementary "Languages" [ref=e57]:
+            - heading "Languages" [level=3] [ref=e58]
+            - list [ref=e59]:
+              - listitem [ref=e60]:
+                - generic [ref=e61]: French
+                - generic [ref=e62]: C1
+              - listitem [ref=e63]:
+                - generic [ref=e64]: English
+                - generic [ref=e65]: B2
+              - listitem [ref=e66]:
+                - generic [ref=e67]: Arabic
+                - generic [ref=e68]: Native
+    - region "Projects" [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - paragraph [ref=e72]: 03 // projects
+          - heading "Projects" [level=2] [ref=e73]
+        - generic [ref=e74]:
+          - article [ref=e76]:
+            - generic [ref=e77]:
+              - paragraph [ref=e78]: ~/projects/01
+              - paragraph [ref=e79]: "2026"
+            - heading "Multi-Tenant ERP SaaS Platform" [level=3] [ref=e80]
+            - paragraph [ref=e81]: Architecture & Backend Lead
+            - paragraph [ref=e82]: Clean Architecture cloud ERP with multi-tenant data isolation, CQRS, and event-driven accounting workflows.
+            - paragraph [ref=e83]: Engineered a cloud ERP platform following Clean Architecture, covering core business modules including Ledger, Inventory, Sales, and Payroll.
+            - list [ref=e84]:
+              - listitem [ref=e85]:
+                - generic [ref=e86]: ▸
+                - generic [ref=e87]: Engineered PostgreSQL Row-Level Security (RLS) for multi-tenant data isolation on 39 tables, using a dual-role strategy and explicit EF Core transactions to guarantee correctness under connection pooling.
+              - listitem [ref=e88]:
+                - generic [ref=e89]: ▸
+                - generic [ref=e90]: Built a CQRS pipeline with MediatR (157 commands/queries) and a domain event bus (42 events, 17 handlers) enabling automated GL journal postings and complex business workflows.
+              - listitem [ref=e91]:
+                - generic [ref=e92]: ▸
+                - generic [ref=e93]: Implemented FIFO and Weighted Average inventory costing with cost layer tracking, stock reservation workflows, and backorder auto-fulfillment logic.
+              - listitem [ref=e94]:
+                - generic [ref=e95]: ▸
+                - generic [ref=e96]: Designed security layers including Firebase JWT authentication with custom claims, Role-Based Access Control (RBAC), and in-memory token storage to mitigate XSS vulnerabilities.
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: architecture
+              - generic [ref=e100]:
+                - generic [ref=e101]: API
+                - generic [ref=e103]:
+                  - generic [ref=e104]: →
+                  - generic [ref=e105]: CQRS
+                - generic [ref=e106]:
+                  - generic [ref=e107]: →
+                  - generic [ref=e108]: Domain
+                - generic [ref=e109]:
+                  - generic [ref=e110]: →
+                  - generic [ref=e111]: DB · RLS
+            - generic [ref=e112]:
+              - list [ref=e113]:
+                - listitem [ref=e114]: ASP.NET Core (.NET 10)
+                - listitem [ref=e115]: React 18
+                - listitem [ref=e116]: TypeScript
+                - listitem [ref=e117]: PostgreSQL
+              - link "source ↗" [ref=e118] [cursor=pointer]:
+                - /url: https://github.com/oussema-code
+          - article [ref=e120]:
+            - generic [ref=e121]:
+              - paragraph [ref=e122]: ~/projects/02
+              - paragraph [ref=e123]: 10/2025 — 05/2026
+            - heading "Collaborative Satellite Imagery & Urban Monitoring Platform" [level=3] [ref=e124]
+            - paragraph [ref=e125]: End-of-Year Engineering Project — ENIT
+            - paragraph [ref=e126]: Production-grade microservices platform for collaborative satellite imagery and urban monitoring.
+            - paragraph [ref=e127]: Built a full-stack collaborative web platform extending a legacy codebase into a production-grade microservices system.
+            - list [ref=e128]:
+              - listitem [ref=e129]:
+                - generic [ref=e130]: ▸
+                - generic [ref=e131]: Architected a microservices environment with 4 independent Docker services, orchestrated seamlessly via Docker Compose.
+              - listitem [ref=e132]:
+                - generic [ref=e133]: ▸
+                - generic [ref=e134]: Redesigned the authentication layer using a dual-token JWT strategy (short-lived access token plus HTTP-only refresh cookie with SameSite policy), resolving critical legacy security vulnerabilities.
+              - listitem [ref=e135]:
+                - generic [ref=e136]: ▸
+                - generic [ref=e137]: Engineered a CI/CD pipeline via GitHub Actions to automate builds, publish Docker images to GHCR, and deploy to Azure Container Apps.
+              - listitem [ref=e138]:
+                - generic [ref=e139]: ▸
+                - generic [ref=e140]: Integrated real-time collaboration using STOMP over WebSockets for live messaging across project workspaces.
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: architecture
+              - generic [ref=e144]:
+                - generic [ref=e145]: Gateway
+                - generic [ref=e147]:
+                  - generic [ref=e148]: →
+                  - generic [ref=e149]: Services
+                - generic [ref=e150]:
+                  - generic [ref=e151]: →
+                  - generic [ref=e152]: Events
+                - generic [ref=e153]:
+                  - generic [ref=e154]: →
+                  - generic [ref=e155]: DB
+            - generic [ref=e156]:
+              - list [ref=e157]:
+                - listitem [ref=e158]: Spring Boot
+                - listitem [ref=e159]: Next.js
+                - listitem [ref=e160]: Docker
+                - listitem [ref=e161]: GitHub Actions
+                - listitem [ref=e162]: Azure Container Apps
+              - link "source ↗" [ref=e163] [cursor=pointer]:
+                - /url: https://github.com/oussema-code
+    - region "Skills" [ref=e164]:
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: 04 // skills
+          - heading "Skills" [level=2] [ref=e168]
+        - generic [ref=e169]:
+          - generic [ref=e171]:
+            - heading "Backend" [level=3] [ref=e172]
+            - list [ref=e173]:
+              - listitem [ref=e174]: C#
+              - listitem [ref=e175]: ASP.NET Core (.NET 10)
+              - listitem [ref=e176]: Java
+              - listitem [ref=e177]: Spring Boot
+              - listitem [ref=e178]: Python
+              - listitem [ref=e179]: Node.js
+              - listitem [ref=e180]: Express.js
+          - generic [ref=e182]:
+            - heading "Data & Distributed Systems" [level=3] [ref=e183]
+            - list [ref=e184]:
+              - listitem [ref=e185]: PostgreSQL (RLS)
+              - listitem [ref=e186]: MongoDB
+              - listitem [ref=e187]: Redis
+              - listitem [ref=e188]: Entity Framework Core
+              - listitem [ref=e189]: Event-Driven Integration
+              - listitem [ref=e190]: Microservices
+          - generic [ref=e192]:
+            - heading "Architecture" [level=3] [ref=e193]
+            - list [ref=e194]:
+              - listitem [ref=e195]: Clean Architecture
+              - listitem [ref=e196]: CQRS
+              - listitem [ref=e197]: Domain-Driven Design (DDD)
+          - generic [ref=e199]:
+            - heading "Frontend" [level=3] [ref=e200]
+            - list [ref=e201]:
+              - listitem [ref=e202]: React 18
+              - listitem [ref=e203]: Next.js 14
+              - listitem [ref=e204]: TypeScript
+              - listitem [ref=e205]: JavaScript
+              - listitem [ref=e206]: Vite
+              - listitem [ref=e207]: Fluent UI
+              - listitem [ref=e208]: Tailwind CSS
+              - listitem [ref=e209]: TanStack Query
+          - generic [ref=e211]:
+            - heading "Auth" [level=3] [ref=e212]
+            - list [ref=e213]:
+              - listitem [ref=e214]: Firebase Auth
+              - listitem [ref=e215]: JWT
+              - listitem [ref=e216]: RBAC
+          - generic [ref=e218]:
+            - heading "DevOps & Cloud" [level=3] [ref=e219]
+            - list [ref=e220]:
+              - listitem [ref=e221]: Docker
+              - listitem [ref=e222]: GitHub Actions (CI/CD)
+              - listitem [ref=e223]: Azure Container Apps
+              - listitem [ref=e224]: SignalR (WebSockets)
+              - listitem [ref=e225]: Quartz.NET
+          - generic [ref=e227]:
+            - heading "Testing" [level=3] [ref=e228]
+            - list [ref=e229]:
+              - listitem [ref=e230]: xUnit
+              - listitem [ref=e231]: FluentAssertions
+              - listitem [ref=e232]: JUnit
+              - listitem [ref=e233]: Mockito
+              - listitem [ref=e234]: k6 (load testing)
+    - region "Education and timeline" [ref=e235]:
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - paragraph [ref=e238]: 05 // education
+          - heading "Education" [level=2] [ref=e239]
+        - list [ref=e240]:
+          - listitem [ref=e242]:
+            - generic [ref=e244]:
+              - time [ref=e245]: 09/2024 — Present
+              - generic [ref=e246]: Education
+            - heading "National Engineering School of Tunis (ENIT)" [level=3] [ref=e247]
+            - paragraph [ref=e248]: ENIT — Tunis, Tunisia · National Diploma in Computer Engineering (Software Engineering) — 2nd Year
+            - paragraph [ref=e249]: "Relevant coursework: Software Architecture, Algorithms & Data Structures, Databases, Distributed Systems, Networks, Operating Systems"
+          - listitem [ref=e251]:
+            - generic [ref=e253]:
+              - time [ref=e254]: 09/2022 — 06/2024
+              - generic [ref=e255]: Education
+            - heading "Preparatory Institute for Engineering Studies of Sfax (IPEIS)" [level=3] [ref=e256]
+            - paragraph [ref=e257]: IPEIS — Sfax, Tunisia · Scientific Preparatory Classes — PT Track (Physics & Technology)
+          - listitem [ref=e259]:
+            - generic [ref=e261]:
+              - time [ref=e262]: 03/2025 — Present
+              - generic [ref=e263]: Activity
+            - heading "Securinets ENIT — Cybersecurity Club" [level=3] [ref=e264]
+            - paragraph [ref=e265]: Securinets ENIT · Member; CTF challenges and security workshops covering network security, ethical hacking, and vulnerability analysis.
+    - region "Contact" [ref=e266]:
+      - generic [ref=e267]:
+        - generic [ref=e268]:
+          - paragraph [ref=e269]: 06 // contact
+          - heading "Contact" [level=2] [ref=e270]
+          - paragraph [ref=e271]: Have a role, a project, or an idea in mind? Reach me through any of the channels below, or send a message with the form.
+        - generic [ref=e272]:
+          - generic [ref=e274]:
+            - generic [ref=e275]:
+              - paragraph [ref=e276]: ~/email
+              - link "oussemabenameur016@gmail.com" [ref=e277] [cursor=pointer]:
+                - /url: mailto:oussemabenameur016@gmail.com
+            - generic [ref=e278]:
+              - paragraph [ref=e279]: ~/linkedin
+              - link "linkedin ↗" [ref=e280] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/oussema-benameur-07151b246/
+            - generic [ref=e281]:
+              - paragraph [ref=e282]: ~/github
+              - link "github ↗" [ref=e283] [cursor=pointer]:
+                - /url: https://github.com/oussema-code
+            - generic [ref=e284]:
+              - paragraph [ref=e285]: ~/phone
+              - link "+216 25 343 912" [ref=e286] [cursor=pointer]:
+                - /url: tel:+21625343912
+            - generic [ref=e287]:
+              - paragraph [ref=e288]: ~/location
+              - paragraph [ref=e289]: Tunis, Tunisia
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]: name
+              - textbox "name" [ref=e294]:
+                - /placeholder: Ada Lovelace
+            - generic [ref=e295]:
+              - generic [ref=e296]: email
+              - textbox "email" [ref=e297]:
+                - /placeholder: you@example.com
+            - generic [ref=e298]:
+              - generic [ref=e299]: message
+              - textbox "message" [ref=e300]:
+                - /placeholder: Tell me about the role, project, or idea…
+            - button "send message" [ref=e301]
+            - status [ref=e302]
+  - contentinfo [ref=e303]:
+    - generic [ref=e304]:
+      - paragraph [ref=e305]: © 2026 Oussema Ben Ameur
+      - list [ref=e306]:
+        - listitem [ref=e307]:
+          - link "github ↗" [ref=e308] [cursor=pointer]:
+            - /url: https://github.com/oussema-code
+        - listitem [ref=e309]:
+          - link "linkedin ↗" [ref=e310] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/oussema-benameur-07151b246/
+        - listitem [ref=e311]:
+          - link "email" [ref=e312] [cursor=pointer]:
+            - /url: mailto:oussemabenameur016@gmail.com
+      - paragraph [ref=e313]: ~/oussema EOF

@@ -1,47 +1,32 @@
-import { useEffect } from 'react';
-import HeroSection from './components/HeroSection';
-import MenuSection from './components/MenuSection';
-import StorySection from './components/StorySection';
-import GallerySection from './components/GallerySection';
-import FloatingNav from './components/FloatingNav';
-import Footer from './components/Footer';
+import { Nav } from './components/Nav'
+import { Footer } from './components/Footer'
+import { Hero } from './sections/Hero'
+import { About } from './sections/About'
+import { Projects } from './sections/Projects'
+import { Skills } from './sections/Skills'
+import { Timeline } from './sections/Timeline'
+import { Contact } from './sections/Contact'
 
-function App() {
-  // Intersection Observer for fade-in animations on scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' },
-    );
-
-    const sections = document.querySelectorAll('.section-fade-in');
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
-
+/**
+ * Portfolio — Oussema Ben Ameur
+ *
+ * Final composition: fixed nav + main (Hero → About → Projects → Skills →
+ * Timeline → Contact) + footer. Section ids match the nav anchor links:
+ * #home, #about, #projects, #skills, #education, #contact.
+ */
+export default function App() {
   return (
     <>
-      <HeroSection />
-      <div className="section-fade-in">
-        <MenuSection />
-      </div>
-      <div className="section-fade-in">
-        <StorySection />
-      </div>
-      <div className="section-fade-in">
-        <GallerySection />
-      </div>
+      <Nav />
+      <main id="main" className="min-h-svh bg-bg text-ink">
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Timeline />
+        <Contact />
+      </main>
       <Footer />
-      <FloatingNav />
     </>
-  );
+  )
 }
-
-export default App;
