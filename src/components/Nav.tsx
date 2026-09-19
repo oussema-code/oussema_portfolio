@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { cn } from '../lib/cn'
 
-/** Static in-page anchor links — mirrors the section order in App.tsx. */
+/** Static in-page anchor links - mirrors the section order in App.tsx. */
 const LINKS = [
-  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
@@ -12,19 +11,13 @@ const LINKS = [
 ] as const
 
 /**
- * Fixed top navigation with a translucent, blurred bar.
- * Desktop: inline mono links. Mobile (< md): hamburger toggle that opens a
- * stacked overlay panel. Escape closes the panel; clicking a link closes it.
- *
- * The section currently in view is highlighted via an IntersectionObserver
- * that watches a band around the upper-middle of the viewport, so exactly one
- * link is active at a time.
+ * Fixed top navigation - paper strip with a bold bottom rule.
+ * Desktop: mono links with active underline. Mobile: stacked panel.
  */
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string>('#home')
 
-  // Close the mobile panel when Escape is pressed.
   useEffect(() => {
     if (!open) return
     function onKeyDown(event: KeyboardEvent) {
@@ -34,7 +27,6 @@ export function Nav() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [open])
 
-  // Lock body scroll while the mobile panel is open.
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => {
@@ -42,7 +34,6 @@ export function Nav() {
     }
   }, [open])
 
-  // Highlight the nav link of the section currently in view.
   useEffect(() => {
     const sections = LINKS.map(({ href }) =>
       document.getElementById(href.slice(1)),
@@ -67,27 +58,24 @@ export function Nav() {
 
   return (
     <>
-      {/* Skip link — first focusable element on the page. */}
+      {/* Skip link - first focusable element on the page. */}
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:border focus:border-accent-line focus:bg-bg focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-accent"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:border-2 focus:border-ink focus:bg-surface focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-bold focus:text-ink"
       >
         Skip to content
       </a>
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-bg/80 backdrop-blur">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 sm:px-8">
+      <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-ink bg-bg/90 backdrop-blur">
+        <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 sm:px-8">
           {/* Wordmark */}
           <a
             href="#home"
             onClick={close}
-            className="font-mono text-sm text-ink transition-colors hover:text-accent"
-            aria-label="Oussema Ben Ameur — back to top"
+            className="font-mono text-sm font-bold text-ink hover:text-accent"
+            aria-label="Oussema Ben Ameur - back to top"
           >
-            <span className="text-accent">~</span>oussema
-            <span className="text-accent" aria-hidden="true">
-              /
-            </span>
+            <span className="text-accent">/</span>oussema.ben-ameur
           </a>
 
           {/* Desktop links */}
@@ -101,19 +89,12 @@ export function Nav() {
                       href={href}
                       aria-current={isActive ? 'true' : undefined}
                       className={cn(
-                        'relative font-mono text-xs transition-colors sm:text-sm',
+                        'font-mono text-xs font-semibold uppercase tracking-wider transition-colors sm:text-sm',
                         isActive
-                          ? 'text-accent'
+                          ? 'border-b-2 border-accent pb-1 text-ink'
                           : 'text-ink-dim hover:text-accent',
                       )}
                     >
-                      <span
-                        aria-hidden="true"
-                        className={cn(
-                          'absolute -left-3.5 top-1/2 h-1 w-1 -translate-y-1/2 rounded-full bg-accent transition-opacity',
-                          isActive ? 'opacity-100' : 'opacity-0',
-                        )}
-                      />
                       {label}
                     </a>
                   </li>
@@ -129,7 +110,7 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-ink-dim transition-colors hover:border-accent-line hover:text-accent focus-visible:outline-none md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center border-2 border-ink text-ink-dim hover:border-accent hover:text-accent focus-visible:outline-none md:hidden"
           >
             <span className="relative block h-3.5 w-5" aria-hidden="true">
               <span
@@ -173,14 +154,12 @@ export function Nav() {
                       onClick={close}
                       aria-current={isActive ? 'true' : undefined}
                       className={cn(
-                        'block rounded-md px-3 py-2.5 font-mono text-sm transition-colors hover:bg-surface',
-                        isActive
-                          ? 'text-accent'
-                          : 'text-ink-dim hover:text-accent',
+                        'block px-3 py-2.5 font-mono text-sm font-semibold transition-colors hover:bg-surface-2',
+                        isActive ? 'text-accent' : 'text-ink-dim hover:text-accent',
                       )}
                     >
                       <span className="mr-2 text-accent" aria-hidden="true">
-                        ~/
+                        /
                       </span>
                       {label.toLowerCase()}
                     </a>

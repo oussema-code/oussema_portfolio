@@ -8,7 +8,7 @@ import { Timeline } from './sections/Timeline'
 import { Contact } from './sections/Contact'
 
 /**
- * Portfolio — Oussema Ben Ameur
+ * Portfolio - Oussema Ben Ameur
  *
  * Final composition: fixed nav + main (Hero → About → Projects → Skills →
  * Timeline → Contact) + footer. Section ids match the nav anchor links:

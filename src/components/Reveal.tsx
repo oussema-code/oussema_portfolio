@@ -13,7 +13,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 /**
  * Subtle scroll-reveal wrapper. Respects prefers-reduced-motion:
  * when reduced motion is requested, content renders without animation.
- * This is the ONLY motion primitive — keep it restrained.
+ * This is the ONLY motion primitive - keep it restrained.
  */
 export function Reveal({ children, delay = 0, className }: RevealProps) {
   const reduceMotion = useReducedMotion()

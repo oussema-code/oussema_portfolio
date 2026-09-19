@@ -1,0 +1,76 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[left=0.55in,right=0.55in,top=0.38in,bottom=0.38in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=*,nosep,topsep=1pt}
+\titleformat{\section}{\normalsize\bfseries\uppercase}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+  {\LARGE\textbf{Oussema Ben Ameur}}\\[-1pt]
+  {\normalsize Software / Backend Engineering Student}\\[2pt]
+  Tunis, Tunisia \enspace|\enspace +216 25 343 912 \enspace|\enspace
+  \href{mailto:oussema.benameur@etudiant-enit.utm.tn}{oussema.benameur@etudiant-enit.utm.tn}\\[-1pt]
+  \href{https://www.linkedin.com/in/oussema-benameur-07151b246/}{linkedin.com/in/oussema-benameur} \enspace|\enspace
+  \href{https://github.com/oussema-code}{github.com/oussema-code}
+\end{center}
+
+\vspace{-4pt}
+Final-year computer engineering student seeking a \textbf{paid 4--6 month backend or software engineering internship from February 2027}. Hands-on experience building production backend features in ASP.NET Core and Spring Boot, including multi-tenant data architectures, CQRS pipelines, and tested REST APIs. Open to relocation across Europe and North America.
+
+\section{Technical Skills}
+\textbf{Backend:} C\#, ASP.NET Core, Entity Framework Core, Java, Spring Boot, Python, Node.js, Express.js, REST APIs, JWT authentication, WebSocket/STOMP messaging\\
+\textbf{Data \& Architecture:} PostgreSQL, MongoDB, Redis, RabbitMQ, SQLite, Microservices, CQRS, Domain-Driven Design, Row-Level Security, unit/integration testing (JUnit, Mockito)\\
+\textbf{Frontend:} React, TypeScript, Next.js\\
+\textbf{DevOps:} Docker, Docker Compose, GitHub Actions, Azure Container Apps, Prometheus, Grafana, k6 \enspace|\enspace
+\textbf{Tools:} Git, Linux \enspace|\enspace \textbf{Networking:} TCP/IP, routing, switching, CCNA: Introduction to Networks
+
+\section{Experience}
+\textbf{Software Engineering Intern, Trace \& Ace} \hfill \textit{Summer 2026 | 2 months}\\
+\textit{Multi-tenant ERP SaaS | ASP.NET Core, React, TypeScript, PostgreSQL}
+\begin{itemize}
+  \item Developed production features for a company-owned ERP covering ledger, inventory, sales, and payroll workflows.
+  \item Built parts of a CQRS and domain-event architecture spanning 157 commands/queries, 42 events, and 17 handlers for accounting and operational workflows.
+  \item Implemented PostgreSQL Row-Level Security across 39 tables using dual database roles and explicit EF Core transactions to preserve tenant isolation with connection pooling.
+  \item Implemented FIFO and weighted-average costing, stock reservations, and backorder fulfillment logic.
+\end{itemize}
+
+\textbf{Software Engineering Intern, IPS Group} \hfill \textit{Summer 2025 | 1 month}\\
+\textit{Procurement workflow application | React, Node.js, Express.js, SQLite}
+\begin{itemize}
+  \item Developed a three-tier web application that centralized purchase requests, suppliers, quotations, and purchase orders previously handled through paper forms and spreadsheets.
+  \item Built role-based user and administrator dashboards, REST endpoints, supplier quotation comparison, and email notifications.
+  \item Designed the relational data model for users, suppliers, requests, articles, quotations, and purchase orders.
+\end{itemize}
+
+\section{Selected Project}
+\textbf{Collaborative Satellite Imagery \& Urban Monitoring Platform} \hfill \textit{Nov 2025 -- Apr 2026}\\
+\textit{Two-person ENIT project | Spring Boot, Next.js, Flask, FastAPI, Docker, Azure}
+\begin{itemize}
+  \item Co-developed four application services across Spring Boot, Flask, and FastAPI, communicating over REST and RabbitMQ.
+  \item Validated the backend with 181 passing JUnit/Mockito tests and k6 load tests totaling 2,700 checks across 15 virtual users.
+  \item Integrated JWT authentication and STOMP/WebSocket messaging for real-time project collaboration.
+  \item Orchestrated a local integration stack with Docker Compose, MongoDB, Redis, RabbitMQ, Prometheus, and Grafana, and a GitHub Actions pipeline that built and deployed four Docker images to Azure Container Apps.
+\end{itemize}
+
+\section{Education \& Certifications}
+\textbf{National Engineering School of Tunis (ENIT)} \hfill \textit{Sep 2024 -- Present}\\
+National Diploma in Computer Engineering, Software Engineering track -- Final year\\
+\textit{Coursework:} Software Architecture, Databases, Distributed Systems, Operating Systems, Computer Networks
+
+\textbf{Preparatory Institute for Engineering Studies of Sfax (IPEIS)} \hfill \textit{Sep 2022 -- Jun 2024}\\
+Scientific Preparatory Classes, Physics and Technology track
+
+\textbf{Certifications:} Cisco CCNA: Introduction to Networks; TOEIC English certificate (CEFR B2)\\
+\textbf{Languages:} Arabic (native), French (C1), English (B2) \enspace|\enspace
+\textbf{Activity:} Securinets ENIT cybersecurity club member
+
+\end{document}

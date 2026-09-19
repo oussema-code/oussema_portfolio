@@ -1,24 +1,20 @@
 import { useState, type FormEvent } from 'react'
-import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
 import { SectionLabel } from '../components/SectionLabel'
 import { content } from '../data/content'
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error'
 
-/** Shared mono external-link style (matches Hero/About). */
 const linkClass =
-  'font-mono text-sm text-ink-dim underline decoration-accent/60 decoration-2 underline-offset-4 transition-colors hover:text-accent'
+  'font-mono text-sm font-semibold text-ink-dim underline decoration-accent decoration-2 underline-offset-4 hover:text-accent'
 
-/** Dark input/textarea styling per the design tokens. */
 const fieldClass =
-  'w-full rounded border border-border bg-surface px-3.5 py-2.5 font-mono text-sm text-ink placeholder:text-ink-mute transition-colors focus:border-accent-line'
+  'w-full border-2 border-border bg-surface px-3.5 py-2.5 font-mono text-sm text-ink placeholder:text-ink-mute transition-colors focus:border-accent'
 
 /**
- * Contact — direct channels (email/LinkedIn/GitHub/phone/location) plus a
- * controlled message form. The form POSTs JSON to `contact.formEndpoint`
- * (Formspree-style). While the endpoint is empty it shows a mailto notice
- * instead of firing a network request.
+ * Contact - bold closing section: direct channels plus a form that POSTs
+ * JSON to `contact.formEndpoint` (Formspree-style). While the endpoint is
+ * empty it shows a mailto notice instead of firing a network request.
  */
 export function Contact() {
   const { contact } = content
@@ -32,8 +28,6 @@ export function Contact() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    // Not wired to a backend yet — surface an informative notice instead of
-    // attempting a network request to an empty endpoint.
     if (!endpoint) {
       setStatus('success')
       return
@@ -61,204 +55,165 @@ export function Contact() {
     }
   }
 
-  // Empty-endpoint flow never leaves "idle"/"success" — reuse "success" as the
-  // trigger, but render it as an amber notice rather than a green success.
   const showNotice = !endpoint && status === 'success'
   const showSuccess = !!endpoint && status === 'success'
 
   return (
-    <section id="contact" aria-label="Contact" className="bg-bg py-20 sm:py-24">
-      <Container size="md">
+    <section id="contact" aria-label="Contact" className="py-20 sm:py-24">
+      <div className="mx-auto w-full max-w-5xl px-6 sm:px-8">
         <Reveal>
           <SectionLabel className="mb-3">06 // contact</SectionLabel>
-          <h2 className="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+          <h2 className="text-3xl font-black tracking-tight text-ink sm:text-4xl">
             Contact
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-dim">
-            Have a role, a project, or an idea in mind? Reach me through any of
-            the channels below, or send a message with the form.
-          </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Direct channels */}
           <Reveal delay={0.1}>
-            <div className="space-y-8">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-ink-mute">
-                  ~/email
-                </p>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className={`mt-2 inline-block ${linkClass}`}
-                >
-                  {contact.email}
-                </a>
-              </div>
-
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-ink-mute">
-                  ~/linkedin
-                </p>
-                <a
-                  href={contact.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-2 inline-block ${linkClass}`}
-                >
-                  linkedin ↗
-                </a>
-              </div>
-
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-ink-mute">
-                  ~/github
-                </p>
-                <a
-                  href={contact.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-2 inline-block ${linkClass}`}
-                >
-                  github ↗
-                </a>
-              </div>
-
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-ink-mute">
-                  ~/phone
-                </p>
-                <a
-                  href={`tel:${contact.phone.replace(/[^\d+]/g, '')}`}
-                  className={`mt-2 inline-block ${linkClass}`}
-                >
-                  {contact.phone}
-                </a>
-              </div>
-
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-ink-mute">
-                  ~/location
-                </p>
-                <p className="mt-2 font-mono text-sm text-ink-dim">
-                  {contact.location}
-                </p>
-              </div>
+            <div>
+              <p className="max-w-md text-lg leading-relaxed text-ink-dim">
+                Hiring for a DevOps, Cloud, Platform, or SRE internship? I
+                would love to hear about your team and what you are building.
+              </p>
+              <ul className="mt-8 space-y-3 font-mono text-sm">
+                <li>
+                  <a href={`mailto:${contact.email}`} className={linkClass}>
+                    {contact.email}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={contact.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    linkedin ↗
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={contact.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    github ↗
+                  </a>
+                </li>
+                <li className="text-ink-mute">{contact.phone}</li>
+                <li className="text-ink-mute">{contact.location} · open to relocation</li>
+              </ul>
             </div>
           </Reveal>
 
-          {/* Message form */}
-          <Reveal delay={0.2}>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label
-                  htmlFor="contact-name"
-                  className="mb-2 block font-mono text-xs uppercase tracking-[0.28em] text-ink-dim"
+          {/* Form */}
+          <Reveal delay={0.15}>
+            <form onSubmit={handleSubmit} className="card-ticket rounded-none p-6">
+              <div className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="contact-name"
+                    className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wider text-ink-mute"
+                  >
+                    name
+                  </label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    autoComplete="name"
+                    required
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    placeholder="Jane Doe"
+                    className={fieldClass}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-email"
+                    className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wider text-ink-mute"
+                  >
+                    email
+                  </label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    placeholder="jane@company.com"
+                    className={fieldClass}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-message"
+                    className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wider text-ink-mute"
+                  >
+                    message
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows={4}
+                    required
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
+                    placeholder="Tell me about the role, project, or idea..."
+                    className={`${fieldClass} resize-y`}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="w-full bg-accent px-5 py-2.5 font-mono text-sm font-bold text-white transition-colors hover:bg-accent-strong focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                 >
-                  name
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  required
-                  autoComplete="name"
-                  value={name}
-                  onChange={(event) => setName(event.target.value)}
-                  placeholder="Ada Lovelace"
-                  className={fieldClass}
-                />
-              </div>
+                  {status === 'sending' ? 'sending...' : 'send message'}
+                </button>
 
-              <div>
-                <label
-                  htmlFor="contact-email"
-                  className="mb-2 block font-mono text-xs uppercase tracking-[0.28em] text-ink-dim"
-                >
-                  email
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  placeholder="you@example.com"
-                  className={fieldClass}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="contact-message"
-                  className="mb-2 block font-mono text-xs uppercase tracking-[0.28em] text-ink-dim"
-                >
-                  message
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  required
-                  rows={5}
-                  value={message}
-                  onChange={(event) => setMessage(event.target.value)}
-                  placeholder="Tell me about the role, project, or idea…"
-                  className={`${fieldClass} resize-y`}
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === 'sending'}
-                className="inline-flex w-full items-center justify-center rounded-md border border-accent-line bg-transparent px-5 py-2.5 font-mono text-sm font-medium text-accent transition-colors hover:bg-accent-dim focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
-              >
-                {status === 'sending' ? 'sending…' : 'send message'}
-              </button>
-
-              {/* Status region — reserved height prevents layout jump. */}
-              <div
-                role="status"
-                aria-live="polite"
-                className="min-h-24 text-sm"
-              >
-                {showNotice && (
-                  <p className="rounded border border-accent-line bg-accent-dim px-3.5 py-2.5 text-accent">
-                    Form not wired yet — email me directly at{' '}
-                    <a
-                      href={`mailto:${contact.email}`}
-                      className="font-mono text-accent-strong underline decoration-accent/60 decoration-2 underline-offset-4 hover:text-accent"
-                    >
-                      {contact.email}
-                    </a>
-                    .
-                  </p>
-                )}
-                {showSuccess && (
-                  <p className="text-success">
-                    Message sent — thanks for reaching out. I'll get back to you
-                    soon.
-                  </p>
-                )}
-                {status === 'error' && (
-                  <p className="text-danger">
-                    Something went wrong while sending — please try again, or
-                    email me directly at{' '}
-                    <a
-                      href={`mailto:${contact.email}`}
-                      className="font-mono text-danger underline decoration-danger/60 decoration-2 underline-offset-4 hover:text-accent"
-                    >
-                      {contact.email}
-                    </a>
-                    .
-                  </p>
-                )}
+                <div role="status" aria-live="polite" className="min-h-24 text-sm">
+                  {showNotice && (
+                    <p className="border-l-4 border-accent bg-accent-dim px-3.5 py-2.5 text-ink">
+                      Form not wired yet - email me directly at{' '}
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="font-mono font-semibold underline decoration-accent decoration-2 underline-offset-4"
+                      >
+                        {contact.email}
+                      </a>
+                      .
+                    </p>
+                  )}
+                  {showSuccess && (
+                    <p className="text-success">
+                      Message sent - thanks for reaching out. I'll get back to
+                      you soon.
+                    </p>
+                  )}
+                  {status === 'error' && (
+                    <p className="text-danger">
+                      Something went wrong while sending - please try again, or
+                      email me directly at{' '}
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="font-mono underline decoration-danger decoration-2 underline-offset-4"
+                      >
+                        {contact.email}
+                      </a>
+                      .
+                    </p>
+                  )}
+                </div>
               </div>
             </form>
           </Reveal>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

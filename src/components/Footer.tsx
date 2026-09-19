@@ -1,19 +1,17 @@
-import { Container } from './Container'
 import { content } from '../data/content'
 
 /**
- * Minimal technical footer — mono credit line, external links sourced from
- * `content.contact`, and a terminal EOF flourish.
+ * Editorial footer - bold top rule, mono credit, links, EOF flourish.
  */
 export function Footer() {
   const { email, githubUrl, linkedinUrl } = content.contact
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border bg-bg py-10">
-      <Container className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+    <footer className="border-t-2 border-ink bg-bg py-10">
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-start justify-between gap-6 px-6 sm:flex-row sm:items-center sm:px-8">
         <p className="font-mono text-xs text-ink-mute sm:text-sm">
-          © {year} <span className="text-ink">Oussema Ben Ameur</span>
+          © {year} <span className="font-bold text-ink">Oussema Ben Ameur</span>
         </p>
 
         <ul className="flex items-center gap-6">
@@ -22,7 +20,7 @@ export function Footer() {
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-ink-dim transition-colors hover:text-accent sm:text-sm"
+              className="font-mono text-xs font-semibold text-ink-dim hover:text-accent sm:text-sm"
             >
               github ↗
             </a>
@@ -32,7 +30,7 @@ export function Footer() {
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-ink-dim transition-colors hover:text-accent sm:text-sm"
+              className="font-mono text-xs font-semibold text-ink-dim hover:text-accent sm:text-sm"
             >
               linkedin ↗
             </a>
@@ -40,7 +38,7 @@ export function Footer() {
           <li>
             <a
               href={`mailto:${email}`}
-              className="font-mono text-xs text-ink-dim transition-colors hover:text-accent sm:text-sm"
+              className="font-mono text-xs font-semibold text-ink-dim hover:text-accent sm:text-sm"
             >
               email
             </a>
@@ -48,9 +46,9 @@ export function Footer() {
         </ul>
 
         <p className="hidden font-mono text-xs text-ink-mute lg:block" aria-hidden="true">
-          ~/oussema <span className="text-accent">EOF</span>
+          <span className="text-accent">/</span>oussema <span className="font-bold text-ink">EOF</span>
         </p>
-      </Container>
+      </div>
     </footer>
   )
 }
