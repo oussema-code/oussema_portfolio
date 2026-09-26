@@ -49,7 +49,7 @@ export const content: SiteContent = {
         'Integrated JWT authentication and STOMP/WebSocket messaging for real-time project collaboration.',
       ],
       stack: ['Spring Boot', 'Next.js', 'Flask', 'FastAPI', 'Docker', 'Docker Compose', 'GitHub Actions', 'GHCR', 'Azure Container Apps', 'Prometheus', 'Grafana', 'RabbitMQ', 'MongoDB', 'Redis'],
-      githubUrl: 'https://github.com/oussema-code',
+      githubUrl: 'https://github.com/fedibbm/Satellite_Platform_Application/tree/oussema',
     },
     {
       id: 'multi-tenant-erp',
